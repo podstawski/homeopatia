@@ -30,7 +30,11 @@ class CreateTableModality extends Doctrine_Migration_Base
             'book_id' => array(
                 'type' => 'Integer',
                 'notnull' => false,
-            ),            
+            ),
+            'modality' => array(
+                'type' => 'Varchar(1)',
+                'notnull' => false,
+            ),
 
         ), array('charset'=>'utf8'));
         

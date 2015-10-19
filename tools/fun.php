@@ -1,5 +1,14 @@
 <?php
 
+	$_REQUEST['_site']='pudel.webkameleon.com';
+	
+	include __DIR__.'/../backend/include/all.php';
+	autoload([__DIR__.'/../models',__DIR__.'/../controllers']);
+	
+	$config=json_config(__DIR__.'/../config/application.json');
+	$bootstrap = new Bootstrap($config);
+
+
     function url_get($url)
     {
         $cache=__DIR__.'/.cache/'.md5('HP:'.$url).'.html';
@@ -83,4 +92,8 @@
         return $html;
     }
     
+    function unhtml($h)
+    {
+        return preg_replace('~<[^>]+>~','',$h);
+    }
    
