@@ -1,0 +1,17 @@
+{
+    "db.dsn":"mysql:unix_socket=/cloudsql/jemyrazem:jemyrazem;charset=utf8;dbname=homeopathy",
+    "db.user":"pudel",
+    "db.pass":"pupcia",   
+    
+    "maxmind.user_id":"96262",
+    "maxmind.license_key":"teNhCashA88D",
+
+    "protocol":"http",
+
+    "square_size": 900,
+    "image_size": 1140,
+    "thumb_size": 250,
+    
+    
+    "admin.ids": [1]  
+}
