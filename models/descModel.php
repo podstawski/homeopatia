@@ -4,16 +4,16 @@ class descModel extends Model {
 	protected $_table='description';
 	
 	
-	public function find_on_desc($desc,$lang,$book,$remedium)
+	public function find($lang,$book,$remedium)
 	{
-		$sql="SELECT dict.id,dict.body FROM dict
+		$sql="SELECT dict.* FROM dict
 				LEFT JOIN ".$this->_table." ON dict.table_name='".$this->_table."' AND ".$this->_table.".id=dict.table_id
-				WHERE dict.body=? AND dict.lang=?
+				WHERE dict.lang=?
 				AND ".$this->_table.".book_id=?
 				AND ".$this->_table.".remedium_id=?
 			";
 			
-		return $this->conn->fetchRow($sql,[$desc,$lang,$book,$remedium]);
+		return $this->conn->fetchRow($sql,[$lang,$book,$remedium]);
 	}
 	
 	

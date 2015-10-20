@@ -1,11 +1,13 @@
 <?php
 
-class CreateTableComplaint extends Doctrine_Migration_Base
+class CreateTableRelation extends Doctrine_Migration_Base
 {
-    private $_tableName = 'complaint';
+    private $_tableName = 'relation';
     
     private $_fk = [
-        'fk_complaint_complaint'=>['complaint','id','parent_id'],
+        'fk_relation_master'=>['remedium','id','master_id'],
+        'fk_relation_slave'=>['remedium','id','slave_id'],
+        'fk_relation_book'=>['book','id','book_id'],
     ];   
 
     public function up()
@@ -17,11 +19,22 @@ class CreateTableComplaint extends Doctrine_Migration_Base
                 'primary' => true,
                 'autoincrement' => true,
             ),
-            'parent_id' => array(
+            'master_id' => array(
                 'type' => 'Integer',
                 'notnull' => false,
             ),
-           
+            'slave_id' => array(
+                'type' => 'Integer',
+                'notnull' => false,
+            ),
+            'book_id' => array(
+                'type' => 'Integer',
+                'notnull' => false,
+            ),
+            'relation' => array(
+                'type' => 'Varchar(32)',
+                'notnull' => false,
+            )
 
         ), array('charset'=>'utf8'));
         

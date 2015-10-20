@@ -14,7 +14,8 @@ class CreateTableDict extends Doctrine_Migration_Base
                 lang Varchar(2),
                 body TEXT CHARACTER SET utf8,
                 FULLTEXT (body)
-            ) ENGINE=MyISAM;
+            );
+            
         ");
     }
 

@@ -1,3 +1,3 @@
 {
-	"db.dsn":"mysql:host=173.194.224.182;charset=utf8;dbname=homeopathy"
+	"db.dsn":"mysql:host=173.194.250.90;charset=utf8;dbname=homeopathy"
 }
